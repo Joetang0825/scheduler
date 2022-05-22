@@ -8,27 +8,27 @@ export default function DayListItem(props) {
 
   // console.log(dayClass);
 
-  const formatSpots = (numSpots) => {
+  const formatSpots = () => {
 
-    if (numSpots === 0) {
+    if (props.spots === 0) {
       return 'no spots';
     }
 
-    if (numSpots > 1) {
-      return numSpots + ' spots';
+    if (props.spots > 1) {
+      return props.spots + ' spots';
     }
 
-    if (numSpots === 1) {
-      return numSpots + ' spot';
+    if (props.spots === 1) {
+      return props.spots + ' spot';
     }
 
   }
 
 
   return (
-    <li onClick={() => props.setDay(props.name)} className={dayClass}>
+    <li onClick={() => props.setDay(props.name)} className={dayClass} selected={props.selected}>
       <h2 className="text--regular">{props.name}</h2>
-      <h3 className="text--light">{formatSpots(props.spots)} remaining</h3>
+      <h3 className="text--light">{formatSpots()} remaining</h3>
     </li>
   );
 }
