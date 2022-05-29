@@ -15,3 +15,21 @@ export function getAppointmentsForDay(state, day) {
   return appointmentList;
 
 }
+
+
+export function getInterview(state, interview) {
+  if (interview === null) {
+    return null;
+  }
+
+  const detailedInterview = {};
+  detailedInterview["student"] = interview.student;
+  detailedInterview["interviewer"] = {};
+  detailedInterview["interviewer"]["id"] = interview.interviewer;
+  detailedInterview["interviewer"]["name"] = state.interviewers[interview.interviewer].name;
+  detailedInterview["interviewer"]["avatar"] = state.interviewers[interview.interviewer].avatar;
+
+  return detailedInterview;
+
+}
+
