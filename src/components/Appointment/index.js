@@ -86,7 +86,6 @@ export default function Appointment(props) {
         onConfirm={remove}
       />
     )}
-    {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
     {mode === EDIT && (
       <Form
         interviewers={props.interviewers}
