@@ -59,7 +59,6 @@ export default function Application(props) {
       .then(() => {
         setState(prev => ({ ...prev, appointments }));
       })
-
   }
 
 
