@@ -48,7 +48,9 @@ export default function useApplicationData() {
     return axios.put(`/api/appointments/${id}`, { interview })
       .then(() => {
         const days = [...state.days];
-        days[calculateIndex(id)].spots--;
+        if (!state.appointments[id].interview) {
+          days[calculateIndex(id)].spots--;
+        }
         setState(prev => ({ ...prev, appointments, days }));
       })
 
