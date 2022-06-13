@@ -78,7 +78,7 @@ export default function useApplicationData() {
       .then(() => {
         const days = [...state.days];
         days[calculateIndex(id)].spots++;
-        setState(prev => ({ ...prev, appointments }));
+        setState(prev => ({ ...prev, appointments, days }));
       })
   }
 
