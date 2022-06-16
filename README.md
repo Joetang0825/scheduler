@@ -47,3 +47,18 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Screenshots
+
+#### Show appointment for the day
+!["Show appointments for the day"](https://github.com/Joetang0825/scheduler/blob/master/docs/Appointments_for_the_day.png)
+
+#### Create a new appointment
+!["Create a new appointment"](https://github.com/Joetang0825/scheduler/blob/master/docs/Create_new_appointment.png)
+
+#### Edit or Delete an appointment
+!["Edit or Delete an appointment"](https://github.com/Joetang0825/scheduler/blob/master/docs/Edit_or_Delete_Appointment.png)
+
+#### Confirmation before deleting an appointment
+!["Confirmation before deleting an appointment"](https://github.com/Joetang0825/scheduler/blob/master/docs/Delete_Confirmation.png)
+
