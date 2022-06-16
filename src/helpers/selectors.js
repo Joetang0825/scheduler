@@ -1,3 +1,4 @@
+// Return all the appointments for a specific day
 export function getAppointmentsForDay(state, day) {
   const selectedDay = state.days.filter(eachday => eachday.name === day);
 
@@ -16,6 +17,7 @@ export function getAppointmentsForDay(state, day) {
 
 }
 
+// Return all the interviewers for a specific day
 export function getInterviewersForDay(state, day) {
   const selectedDay = state.days.filter(eachday => eachday.name === day);
 
@@ -35,7 +37,7 @@ export function getInterviewersForDay(state, day) {
 }
 
 
-
+// Return an interview object that contains student and interviewer information
 export function getInterview(state, interview) {
   if (interview === null) {
     return null;

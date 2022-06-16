@@ -10,6 +10,7 @@ import Confirm from "./Confirm";
 import Form from "./Form";
 import Error from "./Error";
 
+// Implement logic for Appointment component from one state to another state depends on user's input
 export default function Appointment(props) {
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
@@ -22,6 +23,7 @@ export default function Appointment(props) {
   const ERROR_DELETE = "ERROR_DELETE";
   const { mode, transition, back } = useVisualMode(props.interview ? SHOW : EMPTY);
 
+  // Save interviewers and student info
   function save(name, interviewer) {
 
     const interview = {
@@ -35,6 +37,7 @@ export default function Appointment(props) {
       .catch(() => transition(ERROR_SAVE, true));
   }
 
+  // Remove an appointment 
   function remove() {
     transition(DELETING, true);
     props.cancelInterview(props.id)

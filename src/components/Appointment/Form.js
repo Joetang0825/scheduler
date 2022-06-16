@@ -3,10 +3,16 @@ import "components/Appointment/styles.scss";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
-
+// A form for updating / creating an appointment
 export default function Form(props) {
+
+  // When creating a new appointment, no student name is displayed
   const [student, setStudent] = useState(props.student || "");
+
+  // When creating a new appointment, no interviewer is selected
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
+
+  // When creating a new appointment, no error is displayed
   const [error, setError] = useState("");
 
   const reset = () => {
@@ -19,6 +25,7 @@ export default function Form(props) {
     props.onCancel();
   }
 
+  // Validate if the user has selected an interviewers and enter a student
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");

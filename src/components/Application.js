@@ -5,8 +5,10 @@ import Appointment from "./Appointment";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
+// Display all the days and interview data for each day
 export default function Application(props) {
 
+  // Get the necessary data from useApplicationData custom hook 
   const {
     state,
     setDay,
@@ -14,9 +16,11 @@ export default function Application(props) {
     cancelInterview
   } = useApplicationData();
 
+  // Get appointments and interviewers data for each day
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const dailyInterviewers = getInterviewersForDay(state, state.day);
 
+  // Retreive appointment data and put it in Appointment component
   const schedule = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
 

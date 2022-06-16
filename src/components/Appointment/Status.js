@@ -1,9 +1,8 @@
 import React from "react";
 import "components/Appointment/styles.scss";
 
-
+// Show loading status like Saving / Deleting
 export default function Status(props) {
-
   return (
     <main className="appointment__card appointment__card--status">
       <img

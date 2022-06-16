@@ -1,3 +1,4 @@
+// Create mock data for unit and integration testing
 const fixtures = {
   days: [
     {
@@ -55,7 +56,11 @@ const fixtures = {
 
 export default {
   defaults: { baseURL: "" },
+
+  // Mock API GET request
   get: jest.fn(url => {
+
+    // Return days data
     if (url === "/api/days") {
       return Promise.resolve({
         status: 200,
@@ -64,6 +69,7 @@ export default {
       });
     }
 
+    // Retrun appointment data
     if (url === "/api/appointments") {
       /* Resolve appointments data */
       return Promise.resolve({
@@ -73,6 +79,7 @@ export default {
       });
     }
 
+    // Return interviewers data
     if (url === "/api/interviewers") {
       /* Resolve interviewers data */
       return Promise.resolve({
@@ -84,6 +91,7 @@ export default {
   }),
 
 
+  // Mock API put request
   put: jest.fn(url => {
     return Promise.resolve({
       status: 204,
@@ -91,6 +99,7 @@ export default {
     });
   }),
 
+  // Mock API delete request
   delete: jest.fn(url => {
     return Promise.resolve({
       status: 204,

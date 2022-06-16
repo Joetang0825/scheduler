@@ -2,9 +2,8 @@ import React from "react";
 import "components/Appointment/styles.scss";
 import Button from "components/Button"
 
-
+// Ask user to confirm before deleting an appointment
 export default function Confirm(props) {
-
   return (
     <main className="appointment__card appointment__card--confirm">
       <h1 className="text--semi-bold">{props.message}</h1>

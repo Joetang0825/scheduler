@@ -3,7 +3,7 @@ import React from "react";
 import "components/DayListItem.js";
 import DayListItem from "components/DayListItem";
 
-
+// Display list of days for the week
 export default function DayList(props) {
   return (
     <ul>

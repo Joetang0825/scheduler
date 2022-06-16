@@ -2,8 +2,8 @@ import React from "react";
 import "components/Appointment/styles.scss";
 
 
+// For an existing appointment, display the student and interviewer
 export default function Show(props) {
-
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">

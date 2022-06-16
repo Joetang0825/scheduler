@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
 
+// Display list of interviewers available 
 function InterviewerList(props) {
 
   return (

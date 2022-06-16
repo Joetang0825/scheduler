@@ -12,6 +12,7 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
+  // After we finish with the GET API call, we set the state for days, appointments and interviewers
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
@@ -19,11 +20,10 @@ export default function useApplicationData() {
       axios.get("/api/interviewers")
     ]).then((all) => {
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
-      //console.log(all[0].data);
     })
   }, []);
 
-
+  // A helper function to calculate which day we need to update the spot remaining
   function calculateIndex(id) {
     if (id % 5 > 0) {
       return Math.floor(id / 5);
@@ -34,6 +34,7 @@ export default function useApplicationData() {
 
   }
 
+  // API PUT call to create an interview
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -57,17 +58,13 @@ export default function useApplicationData() {
   }
 
 
-
+  // API DELETE call to remove an interview
   function cancelInterview(id) {
-
-    // console.log(state.appointments[id]);
 
     const appointment = {
       ...state.appointments[id],
       interview: null
     };
-
-    // console.log(appointment);
 
     const appointments = {
       ...state.appointments,
